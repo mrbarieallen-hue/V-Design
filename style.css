@@ -1,0 +1,276 @@
+ 
+
+/* ОБЩИ НАСТРОЙКИ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1b1b1b;
+    color: white;
+}
+
+/* HEADER / HERO СТИЛОВЕ */
+#header {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    font-size: 10px;
+    letter-spacing: 1px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.nav-right { display: flex; gap: 40px; }
+.work-hours p:first-child { color: #888; }
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+   
+/* Стилизиране на новите елементи в навигацията */
+.nav-brand {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.nav-contact-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.nav-contact-link:hover {
+    color: #888;
+    border-bottom-color: #888;
+}
+
+
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 20%, transparent 80%);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.hero-title {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* PERSONAL INFO СЕКЦИЯ */
+#Personal-info {
+    min-height: 80vh;
+    padding: 100px 50px;
+}
+
+#Personal-info h1 {
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.info div {
+    flex: 1;
+    padding: 30px;
+}
+
+/* FEATURE ICON / SLIDER СЕКЦИЯ */
+#feature-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222222;
+    min-height: 100vh;
+    padding: 50px;
+    gap: 40px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.images { width: 250px; height: 400px; overflow: hidden; border-radius: 8px; }
+.image1 { width: 450px; height: 450px; overflow: hidden; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+img { width: 100%; height: 100%; object-fit: cover; }
+
+.arrow-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev { left: 5%; }
+.next { right: 5%; }
+
+.description-container { text-align: center; max-width: 600px; }
+.description-text { color: white; font-size: 14px; line-height: 1.6; opacity: 0.7; margin-bottom: 20px; }
+.bottom-line { width: 50px; height: 2px; background-color: white; margin: 0 auto; }
+/* --- МОБИЛНА ВЕРСИЯ (За екрани под 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Header / Hero */
+    .top-nav {
+        flex-direction: column; /* Навигацията става една под друга */
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content {
+        left: 20px; /* Намаляваме отстоянието отляво */
+        padding-right: 20px;
+    }
+
+    .hero-title {
+        font-size: 45px; /* Намаляваме огромния текст */
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+
+    /* 2. About Us Section */
+    .info {
+        flex-direction: column; /* Картите се нареждат една под друга, а не в редица */
+        margin: 20px;
+    }
+
+    .info-card {
+        border-right: none; /* Махаме страничната линия */
+        border-bottom: 1px solid whitesmoke; /* Слагаме линия отдолу */
+        padding: 20px 0;
+    }
+
+    .info-card:last-child {
+        border-bottom: none;
+    }
+
+    #Personal-info h1 {
+        left: 20px; /* Центрираме заглавието на секцията */
+        font-size: 30px;
+    }
+
+    /* 3. Slider Section */
+    .slider-wrapper {
+        flex-direction: column; /* Снимките се подреждат вертикално */
+        gap: 20px;
+    }
+
+    .images {
+        width: 90%; /* Заемат почти целия екран на ширина */
+        height: 250px;
+    }
+
+    .image1 {
+        width: 100%; /* Основната снимка е по-голяма */
+        height: 350px;
+    }
+
+    .arrow-btn {
+        display: none; /* На телефон е по-добре без стрелки или да са малки */
+    }
+
+    /* 4. Contact Section */
+    .contact-section {
+        flex-direction: column; /* Текстът и формата застават един под друг */
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .contact-form-card {
+        width: 100%; /* Формата заема целия екран */
+    }
+}
